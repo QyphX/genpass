@@ -16,7 +16,7 @@ Clone the repository:
 
 ```
 $ git clone https://github.com/QyphX/genpass.git
-$ cd password-generator
+$ cd genpass
 ```
 
 Make sure you have Python installed.
