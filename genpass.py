@@ -4,6 +4,16 @@ import argparse
 import subprocess # PBCOPY ONLY WORKS ON MAC (PYPERCLIP TO USE ON OTHER OS)
 
 def generate_password(length, show=False, letters=False, numbers=False, simbols=False):
+  # Validate the user input
+  if length < 4:
+    print("Warning: Passwords shorter than 4 characters are not recommended.")
+    option = input("Do you want to continue with 4 characters instead? [y/n] ").strip().lower()
+    if option in ["y", "yes"]:
+      length = 4
+    else:
+      print("Password generation cancelled.")
+      exit()
+
   # Include all the characters for default
   if not (letters or numbers or simbols):
     characters = string.ascii_letters + string.digits + string.punctuation
